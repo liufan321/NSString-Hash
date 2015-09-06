@@ -37,6 +37,18 @@
 - (NSString *)sha1String;
 
 /**
+ *  计算SHA224散列结果
+ *
+ *  终端测试命令：
+ *  @code
+ *  echo -n "string" | openssl sha -sha224
+ *  @endcode
+ *
+ *  @return 56个字符的SHA224散列字符串
+ */
+- (NSString *)sha224String;
+
+/**
  *  计算SHA256散列结果
  *
  *  终端测试命令：
@@ -47,6 +59,18 @@
  *  @return 64个字符的SHA256散列字符串
  */
 - (NSString *)sha256String;
+
+/**
+ *  计算SHA 384散列结果
+ *
+ *  终端测试命令：
+ *  @code
+ *  echo -n "string" | openssl sha -sha384
+ *  @endcode
+ *
+ *  @return 96个字符的SHA 384散列字符串
+ */
+- (NSString *)sha384String;
 
 /**
  *  计算SHA 512散列结果

@@ -29,6 +29,15 @@
     return [self stringFromBytes:buffer length:CC_SHA1_DIGEST_LENGTH];
 }
 
+- (NSString *)sha224String {
+    const char *str = self.UTF8String;
+    uint8_t buffer[CC_SHA224_DIGEST_LENGTH];
+    
+    CC_SHA224(str, (CC_LONG)strlen(str), buffer);
+    
+    return [self stringFromBytes:buffer length:CC_SHA224_DIGEST_LENGTH];
+}
+
 - (NSString *)sha256String {
     const char *str = self.UTF8String;
     uint8_t buffer[CC_SHA256_DIGEST_LENGTH];
@@ -36,6 +45,15 @@
     CC_SHA256(str, (CC_LONG)strlen(str), buffer);
     
     return [self stringFromBytes:buffer length:CC_SHA256_DIGEST_LENGTH];
+}
+
+- (NSString *)sha384String {
+    const char *str = self.UTF8String;
+    uint8_t buffer[CC_SHA384_DIGEST_LENGTH];
+    
+    CC_SHA384(str, (CC_LONG)strlen(str), buffer);
+    
+    return [self stringFromBytes:buffer length:CC_SHA384_DIGEST_LENGTH];
 }
 
 - (NSString *)sha512String {
